@@ -1,0 +1,42 @@
+Portfolio with Svelte!
+1. npm create svelte@latest my-portfolio 
+1.5 Look up svelte tailwindcss installation
+2. npm install -D tailwindcss postcss autoprefixer
+3. npx tailwindcss init -p
+4. Put stuff in svelte.config
+5. Put stuff in tailwind.config
+6. Put stuff in new app.css
+7. Add a +layout.svelte in the routes folder.
+8. Add a script in app.css, and the slot at the bottom will render
+everything inside of page.svelte
+9. Import google fonts of Roboto and poppins and fontawesome icons in head of app.html
+Let's go!
+
+1. Styling to body tag: bg, text, relative
+2. Styling to lone div: relative z-[1]
+3. Grab particlejs cdn and paste in app.html
+4. Create div with absolute min-h-screen top-0 left-0 w-full z-[-1]
+5. Create a div inside that with absolute and inset-0
+6. Open a script inside app.html and paste this:
+
+    <script>
+      particleJS.load('particles-js', 'assets/particles.json', function() {
+        console.log("Callback - particles.js config loaded")
+      })
+    </script>
+
+7. Make a folder called assests in static, then a particles.json file
+8. Paste in the json file you get from the particles.js website.
+9. Repaste a new script in app.html:
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"
+		integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+10. This particle effect should work.
+11. Go into app.css and give html { scroll-behavior: smooth }
+And * { font-family: 'Roboto', sans-serif }
+And h1,h2,h3,.poppins { font-family: 'Roboto', sans-serif }
+That does it for the css
+12. Create a component folder with step, main, footer, header.svelte.
+13. Import the main component into page.svelte.
