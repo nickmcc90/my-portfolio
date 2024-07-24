@@ -195,3 +195,23 @@ and another get in touch button. Like this:
     </div>
 
 // timestamp 32:41
+
+27. Next, we are going to add a profile image, placing the image in the center
+of a box like this with grid and place-items-center:
+
+    <div class='relative shadow-2xl grid place-items-center'>
+      <img 
+      class='object-cover z-[0] max-h-[70vh]'
+      src={"images/nickpicture.jpeg"} alt="Profile image" />
+    </div>
+
+28. In the header component, make sure to have the "get in touch button" inside of the
+div that is hidden until a screen above small is achieved.
+
+29. The first section of the Main component is done! It was a good statement, and a good
+picture. Now onto making the projects section of my website.
+
+30. Let's have another section tag underneath the previous one that is a flex-col
+31. Within this, have div that holds a message like, 'here's what Ive been working on'
+
+// timestamp: 38:40. Put in the rest of the knowledge here underneath.
