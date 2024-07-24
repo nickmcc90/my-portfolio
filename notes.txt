@@ -40,3 +40,158 @@ And h1,h2,h3,.poppins { font-family: 'Roboto', sans-serif }
 That does it for the css
 12. Create a component folder with step, main, footer, header.svelte.
 13. Import the main component into page.svelte.
+14. Add a div to layout.svelte with these styles..
+
+<div class='relative flex flex-col max-w-[1400px] mx-auto w-full
+text-sm sm:text-base min-h-screen'>
+
+15. Then inside that, we have a div with a button inside,
+with an up arrow inside. This whole contraption will be our top part
+of the layout.
+16. Then we have our header, then our slot, then our footer.
+17. Then we add a svelte window binding at the bottom.
+18. Then we define some variables that we made in step 17 at
+the top and make a function that scrolls to the top of the page.
+Steps 14-18 should look like this:
+
+<script>
+  import "../app.css";
+  import Header from '../components/Header.svelte'
+  import Footer from '../components/Footer.svelte'
+
+// step 18
+  let y;
+  let innerHeight = 0
+  let innerWidth = 0
+
+  function goTop() {
+    document.body.scrollIntoView()
+  }
+</script>
+
+// step 14
+<div class='relative flex flex-col max-w-[1400px] mx-auto w-full text-sm sm:text-base min-h-screen'>
+  // step 15
+  <div>
+    <button>
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+  </div>
+  // step 16
+  <Header />
+  <slot />
+  <Footer />
+</div>
+
+//step 17
+<svelte:window bind:scrollY={y} bind:innerHeight bind:innerWidth />
+
+19. Add styling to the div containing the button.
+{"fixed bottom-0 w-full duration-200 flex p-10 z-[10] " +
+ { y > 0 ? ' opacity-full pointer-events-auto': ' pointer-events-none opacity-0' }}
+This should make the top arrow appear to allow the user to scroll back up the page.
+
+20. Add on:click={goTop} to the button.
+21. Give props to the header component from layout, we want to give it the 'y' variable.
+Like this...
+
+// In layout.js
+<Header y={y} />
+
+// In header.js
+<script>
+  export let y;       // This is how you receive props.
+</script>
+
+22. Now let's add a class to the button and also to the icon inside.
+Like this:
+
+    <button on:click={goTop} class='ml-auto rounded-full bg-slate-900 text-violet-400 px-3 hover:bg-slate-800
+    cursor-pointer'>
+      <i class="fa-solid fa-arrow-up grid place-items-center aspect-square"></i>
+    </button>
+
+23. Let's go to the Header component.
+We want to wrap everything in a header tag and write our name, and iterate through
+a variable called tabs. Svelte does mapping weird. Like this:
+
+<script>
+  export let y;
+
+  let tabs = [
+    {name: 'Projects', link: '#projects'},
+    {name: 'About me', link: '#about'},
+  ]
+</script>
+
+<header>
+  <h1>
+    <b>Nicholas</b> McCarroll
+  </h1>
+  <div>
+    {#each tabs as tab, index}
+      <a>
+        <p>{tab.name}</p>
+      </a>
+    {/each}
+  </div>
+</header>
+
+24. Let's add some classes for the Header component.
+We are creating a navbar type of deal with justify-between, that activates
+a green background once the screen is beyond a y height of 0.
+Here's what it should look like:
+
+<header class={"sticky top-0 z-[10] duration-200 px-6 flex items-center justify-between border border-solid " + 
+`${y > 0 ? ' py-4 bg-[#008080] border-[#3EB489]' : ' py-6 bg-transparent border-transparent'}`}>
+  <h1 class='font-medium'>
+    <b class='font-bold poppins'>Nicholas</b> McCarroll
+  </h1>
+  <div class='sm:flex items-center gap-4 hidden'>
+    {#each tabs as tab, index}
+      <a href={tab.link} class='duration-200 hover:text-[#000080]'>
+        <p>{tab.name}</p>
+      </a>
+    {/each}
+  </div>
+  <a href='https://www.linkedin.com/in/nicholas-mccarroll/'
+    target='_blank'
+    class='pinkShadow relative overflow-hidden px-5 py-2 group rounded-full bg-white
+  text-slate-950'>
+    <div class='absolute top-0 right-full w-full h-full bg-[#fe6453] opacity-20
+    group-hover:translate-x-full z-0 duration-200 '></div>
+    <h4 class='relative z-9'>Get in touch</h4>
+  </a>
+</header>
+
+25. Let's go on to Main. We start with a main and a section tag.
+
+<main class='flex flex-col flex-1 p-4'>
+  <section id='introPage'>
+
+  </section>
+</main>
+
+We give the main tag flex-1 so that it can stretch as far down as possible.
+
+26. Then, inside the section tag, we write our name, a little about our tech stack,
+and another get in touch button. Like this:
+
+    <div class='flex flex-col lg:justify-center text-center lg:text-left gap-6 md:gap-8 lg-gap-10'>
+      <h2 class='font-semibold text-4xl sm:text-5xl md:text-6xl'>
+        Hi! I'm <span class='poppins text-[#008080]'>Nicholas</span> McCarroll <br/>
+        Full Stack <span class='poppins text-[#008080]'>Developer</span>
+      </h2>
+      <p class='text-base sm:text-lg md:text-xl'>
+        My favorite tech includes Javascript (NEXT.JS or SvelteKit), TailwindCSS,
+        Node.js + Express.js & PostgreSQL or Firebase/Firestore!
+      </p>
+      <a href='https://www.linkedin.com/in/nicholas-mccarroll/' class='pinkShadow mx-auto lg:mr-auto text-base sm:text-lg md:text-xl poppins
+      relative overflow-hidden px-6 py-3 group rounded-full bg-white text-slate-950'>
+        <div class='absolute top-0 right-full w-full h-full bg-[#fe6453] opacity-20
+        group-hover:translate-x-full z-0 duration-200 '></div>
+        <h4 class='relative z-9'>Get in touch &rarr;</h4>
+      </a>
+    </div>
+
+// timestamp 32:41
