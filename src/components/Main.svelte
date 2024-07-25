@@ -65,7 +65,9 @@
     </div>
     <div class='grid grid-cols lg:grid-cols-2 gap-12 lg:gap-10'>
       <Step step={steps[0]}>
-        <p>Music API is an api key store created with <strong class='text-[#4ee2ac]'>Node.js + Express.js
+        <p>Music API is an api key store where you can purhcase a key that 
+          gives you songs based on the vibe you want, either on a prepaid plan or a 
+          subscription plan with metered usage. Created with <strong class='text-[#4ee2ac]'>Node.js + Express.js
           + React + TailwindCSS! Stripe</strong> is used for customer transactions and 
           <strong class='text-[#4ee2ac]'>Firebase</strong> is used
           to store customer and purchase data.
