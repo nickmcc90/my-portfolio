@@ -3,7 +3,7 @@
 
   let steps = [
     {name: "Music API", icon: 'fa-solid fa-music', href: 'https://music-api-600.netlify.app'},
-    {name: "NASA APOD Display", icon: 'fa-solid fa-rocket', href: 'https://nasa-reactjs.netlify.app'}
+    {name: "Crazy Miser", icon: 'fa-solid fa-money-bill-trend-up', href: 'https://crazymiser.com'}
   ]
 
   let benefits = [
@@ -74,11 +74,12 @@
         </p>
       </Step>
       <Step step={steps[1]}>
-        <p>NASA APOD Display is a website that displays cool
-          astronomy pictures and details that change each day! 
-          Made with <strong class='text-[#4ee2ac]'>React.</strong> 
-          A simple display of my <strong class='text-[#4ee2ac]'>frontend</strong>
-          work.
+        <p>Crazy miser is the go-to website for reliable stock
+          pick advice. It has topical articles, a weekly newsletter,
+          and a forum to talk about certain topics.
+          Made with basic <strong class='text-[#4ee2ac]'>HTML, CSS</strong> and
+          <strong class='text-[#4ee2ac]'>Javascript. Firebase</strong><strong class='text-[#4ee2ac]'></strong>
+          provides authentication and database storage.
         </p>
       </Step>
     </div>
