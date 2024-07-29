@@ -11,7 +11,8 @@
     Purdue Univerity's mechanical engineering program. I began my career 
     by becoming a R&D project engineer working with water flow 
     right outside of graduating college. I worked for a year and one month before
-    making the pivot into software development. My decision is fueled by an immense
+    making the pivot into software development, which has been a passion of mine for
+    a while! My decision is fueled by an immense
     curiosity and drive to understand how the online experience works and what the future
     of how we interact tech looks like.`, icon: 'fa-solid fa-pencil'},
     {name: 'Easy to get along with', desc: `My heart is huge! I find great joy in chatting
