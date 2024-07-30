@@ -40,7 +40,7 @@
       </h2>
       <p class='text-base sm:text-lg md:text-xl'>
         My favorite tech includes Javascript (NEXT.JS or SvelteKit), TailwindCSS,
-        Node.js + Express.js & PostgreSQL or Firebase/Firestore!
+        Node.js + Express.js & Firebase/Firestore!
       </p>
       <a href='https://www.linkedin.com/in/nicholas-mccarroll/' class='pinkShadow mx-auto lg:mr-auto lg:ml-0 text-base sm:text-lg md:text-xl poppins
       relative overflow-hidden px-6 py-3 group rounded-full bg-white text-slate-950'
@@ -71,7 +71,7 @@
           subscription plan with metered usage. Created with <strong class='text-[#4ee2ac]'>Node.js + Express.js
           + React + TailwindCSS! Stripe</strong> is used for customer transactions and 
           <strong class='text-[#4ee2ac]'>Firebase</strong> is used
-          to store customer and purchase data.
+          to store customer and purchase data. API is deployed on an <strong class='text-[#4ee2ac]'>AWS EC2</strong> instance.
         </p>
       </Step>
       <Step step={steps[1]}>
@@ -83,6 +83,33 @@
           provides authentication and database storage and <strong class='text-[#4ee2ac]'>Paypal</strong> handles customer subscription transactions.
         </p>
       </Step>
+    </div>
+  </section>
+
+  <section class='py-20 lg:py-32 flex flex-col gap-24 w-[700px] items-center mx-auto'>
+    <div class='flex flex-col gap-2 text-center'>
+      <h6 class='text-xl sm:text-2xl md:text-3xl'>
+        Want to see more? Check the following projects out on my github pinned!
+        <a href='https://github.com/nickmcc90'
+        target='_blank'>
+        <i class="fa-brands fa-github"></i>
+      </a>
+      </h6>
+      <div>I've also worked with...</div>
+      <ul>
+        <li>
+          <strong class='text-[#4ee2ac]'>Next.js and GCP </strong>- Made an e-commerce app that sells music I made. Video previews are loaded from GCP storage.
+          <span class='underline'>Repo titled: music-store</span>
+        </li>
+        <li>
+          <strong class='text-[#4ee2ac]'>React Native </strong>- Made a mobile app that you can search up movie reviews on.
+          <span class='underline'>Repo titled: movie-info-app</span>
+        </li>
+        <li>
+          <strong class='text-[#4ee2ac]'>Flask</strong>- Developing a Flask API that will send emails to customers from the Next.js e-commerce app.
+          <span class='underline'>Repo titled: music-store-backend-python</span>
+        </li>
+      </ul>
     </div>
   </section>
 
