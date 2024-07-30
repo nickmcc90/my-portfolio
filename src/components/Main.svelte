@@ -79,8 +79,8 @@
           pick advice. It has topical articles, a weekly newsletter,
           and a forum to talk about certain topics.
           Made with basic <strong class='text-[#4ee2ac]'>HTML, CSS</strong> and
-          <strong class='text-[#4ee2ac]'>Javascript. Firebase</strong><strong class='text-[#4ee2ac]'></strong>
-          provides authentication and database storage.
+          <strong class='text-[#4ee2ac]'>Javascript. Firebase</strong>
+          provides authentication and database storage and <strong class='text-[#4ee2ac]'>Paypal</strong> handles customer subscription transactions.
         </p>
       </Step>
     </div>
